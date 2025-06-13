@@ -1,3 +1,7 @@
+# Personal Note:
+This version had me reimplementing the solution from scratch using unit tests. After reading the artcile [here](https://web.archive.org/web/20230530152324/https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/) I think the spirit of the kata is more appropriate to refactor the existing solution, which I will attempt in another repo.
+
+
 _Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
 
 # Gilded Rose Refactoring Kata
