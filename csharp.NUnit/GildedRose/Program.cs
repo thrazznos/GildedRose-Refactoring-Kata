@@ -41,9 +41,14 @@ public class Program
         var app = new GildedRose(items);
 
         int days = 2;
-        if (args.Length > 0)
+        if (args.Length == 1)
         {
             days = int.Parse(args[0]) + 1;
+        }
+        else
+        {
+            Console.WriteLine("Please provide the number of days as an argument, e.g. 2");
+            return;
         }
 
         for (var i = 0; i < days; i++)
