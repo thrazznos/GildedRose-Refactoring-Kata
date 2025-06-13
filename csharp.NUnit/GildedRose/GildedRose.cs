@@ -24,7 +24,25 @@ public class GildedRose
             switch (item)
             {
                 case { Name: "Aged Brie" }:
-                    item.Quality = item.Quality + 1;
+                    item.Quality = item.Quality + (item.SellIn <= 0 ? 2 :1);
+                    break;
+                case { Name: "Backstage passes to a TAFKAL80ETC concert" }:
+                    if (item.SellIn <= 0)
+                    {
+                        item.Quality = 0;
+                    }
+                    else if (item.SellIn <= 5 )
+                    {
+                        item.Quality = item.Quality + 3;
+                    }
+                    else if (item.SellIn <= 10)
+                    {
+                        item.Quality = item.Quality + 2;
+                    }
+                    else
+                    {
+                        item.Quality = item.Quality + 1;
+                    }
                     break;
                 default:
                     item.Quality = item.Quality - (item.SellIn < 0 ? 2 : 1);
@@ -33,8 +51,14 @@ public class GildedRose
 
             item.SellIn--;
 
-            //No item ever greater than 50
-            item.Quality = item.Quality > 50 ? 50 : item.Quality;
+            if(item.Quality > 50)
+            {
+                item.Quality = 50;
+            }
+            else if (item.Quality < 0)
+            {
+                item.Quality = 0;
+            }
         }
     }
 }
