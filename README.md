@@ -1,10 +1,8 @@
-# Personal Note:
-This version had me reimplementing the solution from scratch using unit tests. After reading the artcile [here](https://web.archive.org/web/20230530152324/https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/) I think the spirit of the kata is more appropriate to refactor the existing solution, which I will attempt in another repo.
-
-
-_Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
+## Personal Note:
+This version had me reimplementing the solution from scratch using unit tests. After reading the article [here](https://web.archive.org/web/20230530152324/https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/) I think the spirit of the kata is more appropriate to refactor the existing solution, which I will attempt in another repo.
 
 # Gilded Rose Refactoring Kata
+_Support this and all my katas via [Patreon](https://www.patreon.com/EmilyBache)_
 
 You can find out more about this exercise in my YouTube video [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4). I also have a video of a worked solution in Java - [Gilded Rose Kata, Hands-on](https://youtu.be/OdnV8hc9L7I)
 
