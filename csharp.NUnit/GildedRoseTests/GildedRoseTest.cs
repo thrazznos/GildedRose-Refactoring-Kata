@@ -220,6 +220,20 @@ public class GildedRoseTest
         }
 
         [Test]
+        public void ItemDecrementQualityDoubleAfterSell()
+        {
+            var items = new List<Item>
+            {
+                new Item { Name = "Some Item", SellIn = 0, Quality = 20 }
+            };
+            var sut = new GildedRose(items);
+            sut.UpdateQuality();
+            Assert.That(items[0].Quality, Is.EqualTo(19));
+            sut.UpdateQuality();
+            Assert.That(items[0].Quality, Is.EqualTo(17));
+        }
+
+        [Test]
         public void RandomItem10Days()
         {
             var items = new List<Item>
