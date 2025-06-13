@@ -68,6 +68,20 @@ public class GildedRoseTest
         }
 
         [Test]
+        public void AgedBrieDoubleAfterExpired()
+        {
+            var items = new List<Item>
+            {
+                new Item { Name = "Aged Brie", SellIn = 0, Quality = 20 }
+            };
+
+            var sut = new GildedRose(items);
+            sut.UpdateQuality();
+            Assert.That(items[0].SellIn, Is.EqualTo(-1));
+            Assert.That(items[0].Quality, Is.EqualTo(22));
+        }
+
+        [Test]
         public void QualityNeverMoreThan50()
         {
             //Makes an aged brie and iterators updatequality 50 times
@@ -231,6 +245,18 @@ public class GildedRoseTest
             Assert.That(items[0].Quality, Is.EqualTo(19));
             sut.UpdateQuality();
             Assert.That(items[0].Quality, Is.EqualTo(17));
+        }
+
+        [Test]
+        public void ItemDecrementQualityNeverNegative()
+        {
+            var items = new List<Item>
+            {
+                new Item { Name = "Some Item", SellIn = 5, Quality = 0 }
+            };
+            var sut = new GildedRose(items);
+            sut.UpdateQuality();
+            Assert.That(items[0].Quality, Is.EqualTo(0));
         }
 
         [Test]
