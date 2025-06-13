@@ -15,20 +15,26 @@ public class GildedRose
     {
         foreach (var item in Items)
         {
+            if(item.Name == "Sulfuras, Hand of Ragnaros")
+            {
+                // Sulfuras does not need to be updated
+                continue;
+            }
+
             switch (item)
             {
-                case { Name: "Sulfuras, Hand of Ragnaros" }:
-                    // Sulfuras does not need to be updated
+                case { Name: "Aged Brie" }:
+                    item.Quality = item.Quality + 1;
                     break;
                 default:
                     item.Quality = item.Quality - (item.SellIn < 0 ? 2 : 1);
                     break;
             }
 
-            if (item.Name != "Sulfuras, Hand of Ragnaros")
-            {
-                item.SellIn = item.SellIn - 1;
-            }
+            item.SellIn--;
+
+            //No item ever greater than 50
+            item.Quality = item.Quality > 50 ? 50 : item.Quality;
         }
     }
 }
