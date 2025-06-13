@@ -203,35 +203,35 @@ public class GildedRoseTest
         }
     }
 
-    //public class ConjuredItems
-    //{
-    //    [Test]
-    //    public void ConjuredDoubleQualityDecrement()
-    //    {
-    //        var items = new List<Item>
-    //        {
-    //            new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
-    //        };
-    //        var sut = new GildedRose(items);
-    //        sut.UpdateQuality();
-    //        Assert.That(items[0].SellIn, Is.EqualTo(2));
-    //        Assert.That(items[0].Quality, Is.EqualTo(4));
-    //    }
+    public class ConjuredItems
+    {
+        [Test]
+        public void ConjuredDoubleQualityDecrement()
+        {
+            var items = new List<Item>
+            {
+                new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
+            };
+            var sut = new GildedRose(items);
+            sut.UpdateQuality();
+            Assert.That(items[0].SellIn, Is.EqualTo(2));
+            Assert.That(items[0].Quality, Is.EqualTo(4));
+        }
 
-    //    [Test]
-    //    public void ConjuredDoublePastZero()
-    //    {
-    //        var items = new List<Item>
-    //        {
-    //            new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 1 }
-    //        };
-    //        var sut = new GildedRose(items);
-    //        sut.UpdateQuality();
-    //        Assert.That(items[0].SellIn, Is.EqualTo(2));
-    //        Assert.That(items[0].Quality, Is.EqualTo(0));
+        [Test]
+        public void ConjuredDoublePastZero()
+        {
+            var items = new List<Item>
+            {
+                new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 1 }
+            };
+            var sut = new GildedRose(items);
+            sut.UpdateQuality();
+            Assert.That(items[0].SellIn, Is.EqualTo(2));
+            Assert.That(items[0].Quality, Is.EqualTo(0));
 
-    //    }
-    //}
+        }
+    }
 
     public class BusinessRules
     {

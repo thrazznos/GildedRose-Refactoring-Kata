@@ -44,9 +44,9 @@ public class GildedRose
                         item.Quality = item.Quality + 1;
                     }
                     break;
-                //case { Name: string name } when name.Contains("Conjured"):
-                //    item.Quality = item.Quality - 2;
-                //    break;
+                case { Name: string name } when name.Contains("Conjured"):
+                    item.Quality = item.Quality - 2;
+                    break;
                 default:
                     item.Quality = item.Quality - (item.SellIn <= 0 ? 2 : 1);
                     break;
